@@ -1066,3 +1066,109 @@ p {
 .text-gold {
     color: #cca43b;
 }
+
+
+/* --- Panel 3: App Portal & Terminal Dashboard Grid --- */
+.app-terminal-section {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.app-module-card {
+    background: #0d0d12;
+    border: 1px solid #1c1c24;
+    border-radius: 14px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card-header {
+    margin-bottom: 1rem;
+}
+
+.module-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #cca43b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-module-card h3 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+}
+
+.module-desc {
+    color: #808090;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Inner App Item Links List */
+.app-sub-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    background: #121218;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #181822;
+    margin-bottom: 1.5rem;
+}
+
+.sub-link-item {
+    font-size: 0.88rem;
+    color: #b0b0c0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.2s ease;
+}
+
+.app-module-card:hover .sub-link-item {
+    color: #e0e0f0;
+}
+
+/* Secure App Button Status indicator styles */
+.btn-app-lock {
+    width: 100%;
+    padding: 0.8rem;
+    background: #161622;
+    border: 1px solid #252535;
+    color: #a0a0b0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.app-module-card:hover .btn-app-lock {
+    border-color: #cca43b;
+    color: #cca43b;
+    background: rgba(204, 164, 59, 0.05);
+}
