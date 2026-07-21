@@ -1,0 +1,68 @@
+/* ==========================================================================
+   OUR SERVICES SECTION STYLES
+   ========================================================================== */
+
+#our-services {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    /* Keeps a nice gap below a sticky header when scrolled to via ID links */
+    scroll-margin-top: 80px; 
+}
+
+#our-services .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#our-services .services-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#our-services .services-intro {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* Flex or Grid container to layout cards safely for future mobile screens */
+#our-services .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#our-services .service-card {
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle boundary divider */
+    background: transparent; /* Inherits whatever background color your main layout uses */
+}
+
+#our-services .card-title {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#our-services .card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* Tablet & Mobile responsive override rules nested cleanly inside this module */
+@media (min-width: 768px) {
+    #our-services .services-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #our-services .service-card {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
