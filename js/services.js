@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const claimButton = document.getElementById('claim-btn');
 
     // NEW SELECTOR: Grabs your entire main content container body section
-    const mainContentBody = document.querySelector('.main-layout-container');
+    const mainContentBody = document.querySelector('menu-toggle-btn');
 
     function openSidebar() {
         sidebarDashboard.classList.add('open');
