@@ -998,3 +998,71 @@ p {
     /* NOTE: If your existing home layout relies on Flexbox/Grid inside <main>, 
        change this to 'display: flex;' or 'display: grid;' to preserve your layout alignment */
 }
+
+
+
+/* --- Panel 2: Our Services Grid Styles --- */
+.services-offering-section {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.service-display-card {
+    background: #111116; /* Clean dark tone matching ecosystem palette */
+    border: 1px solid #22222b;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-display-card:hover {
+    transform: translateY(-5px);
+    border-color: #cca43b; /* Subtle gold accent highlight styling */
+}
+
+.service-card-icon {
+    font-size: 2.5rem;
+    color: #cca43b;
+    margin-bottom: 1.5rem;
+}
+
+.service-display-card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-display-card p {
+    color: #a0a0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-spec-list li {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.text-gold {
+    color: #cca43b;
+}
