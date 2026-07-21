@@ -5,10 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarDashboard = document.getElementById('sidebar-dashboard');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
     const sidebarLinks = document.querySelectorAll('.sidebar-item');
-    const claimButton = document.getElementById('claim-btn');
-
-    // FIXED SELECTOR: Targets the entire services container section on your page
-    const mainServicesContent = document.getElementById('our-services');
 
     function openSidebar() {
         if (sidebarDashboard && sidebarOverlay) {
@@ -24,15 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // High Compatibility Action Event Registration Engine Blocks
+    // 1. Open Menu Trigger
     if (menuToggleBtn) {
         menuToggleBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation(); // Stops click from bleeding into background components
+            e.stopPropagation(); // Stops the click from instantly firing a close event
             openSidebar();
         });
     }
 
+    // 2. Close Menu Button Trigger
     if (closeSidebarBtn) {
         closeSidebarBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -40,31 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', (e) => {
-            e.preventDefault();
-            closeSidebar();
-        });
-    }
-
-    // NEW INTERACTION MECHANISM: Auto-closes sidebar when user taps on the services section layout
-    if (mainServicesContent) {
-        mainServicesContent.addEventListener('click', () => {
-            // Only fires close protocol if the sidebar dashboard is actually open
-            if (sidebarDashboard && sidebarDashboard.classList.contains('open')) {
+    // 3. GLOBAL CLICK TARGET: Auto-closes menu when tapping ANYWHERE outside the menu drawer
+    document.addEventListener('click', (event) => {
+        // If the menu is open, and the user clicks something that is NOT the menu itself and NOT the hamburger button...
+        if (sidebarDashboard && sidebarDashboard.classList.contains('open')) {
+            if (!sidebarDashboard.contains(event.target) && !menuToggleBtn.contains(event.target)) {
                 closeSidebar();
             }
-        });
-    }
+        }
+    });
 
-    // Prevent clicks inside the actual sidebar panel from triggering background screen close events
+    // 4. Safety block: Clicks inside the actual sidebar menu panel will not close it
     if (sidebarDashboard) {
         sidebarDashboard.addEventListener('click', (e) => {
             e.stopPropagation(); 
         });
     }
 
-    // Auto-closes sidebar when a user clicks on any specific menu list links
+    // 5. Menu Links Trigger (Closes menu when jumping to content)
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
             closeSidebar();
