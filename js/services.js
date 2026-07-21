@@ -1,30 +1,67 @@
-<!-- Add this right before your </body> tag in services.html -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. CHANGE THESE STRINGS to match your actual menu HTML classes/IDs
-    var menuWrapper = document.querySelector("menu-toggle-btn"); // The actual dropdown/sliding menu drawer
-    var menuToggleBtn = document.querySelector("menu-toggle-btn");  // The hamburger menu button icon
-    var activeMenuClass = "active";                                         // The class that makes your menu visible
-    
-    // 2. Auto-close when clicking any link inside the menu
-    if (menuWrapper) {
-        var menuLinks = menuWrapper.querySelectorAll("a");
-        menuLinks.forEach(function(link) {
-            link.addEventListener("click", function() {
-                menuWrapper.classList.remove(activeMenuClass);
-            });
+document.addEventListener('DOMContentLoaded', () => {
+    // Selection Element References
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+    const sidebarDashboard = document.getElementById('sidebar-dashboard');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const sidebarLinks = document.querySelectorAll('.sidebar-item');
+    const claimButton = document.getElementById('claim-btn');
+
+    // NEW SELECTOR: Grabs your entire main content container body section
+    const mainContentBody = document.querySelector('.main-layout-container');
+
+    function openSidebar() {
+        sidebarDashboard.classList.add('open');
+        sidebarOverlay.classList.add('visible');
+    }
+
+    function closeSidebar() {
+        sidebarDashboard.classList.remove('open');
+        sidebarOverlay.classList.remove('visible');
+    }
+
+    // High Compatibility Action Event Registration Engine Blocks
+    if (menuToggleBtn) {
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Stops click from bleeding into background components
+            openSidebar();
         });
     }
 
-    // 3. Auto-close when tapping anywhere on the main service content screen
-    var mainServicesContent = document.getElementById("our-services");
-    if (mainServicesContent) {
-        mainServicesContent.addEventListener("click", function(event) {
-            // Safety check: Don't close if the user is accidentally clicking the menu button itself
-            if (menuWrapper && menuWrapper.classList.contains(activeMenuClass) && !menuToggleBtn.contains(event.target)) {
-                menuWrapper.classList.remove(activeMenuClass);
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSidebar();
+        });
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSidebar();
+        });
+    }
+
+    // NEW INTERACTION MECHANISM: Auto-closes sidebar if user clicks main page content text or backgrounds
+    if (mainContentBody) {
+        mainContentBody.addEventListener('click', () => {
+            // Only fires close protocol if the sidebar dashboard is actually open
+            if (sidebarDashboard.classList.contains('open')) {
+                closeSidebar();
             }
         });
     }
-});
-</script>
+
+    // Prevent clicks inside the actual sidebar panel from triggering background screen close events
+    if (sidebarDashboard) {
+        sidebarDashboard.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+        });
+    }
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeSidebar();
+        });
+    });
