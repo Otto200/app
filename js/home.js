@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // NEW SELECTOR: Grabs your entire main content container body section
     const mainContentBody = document.querySelector('.main-layout-container');
+    
+    // TAB SELECTOR: Selects all your 6 content sub-panels hidden inside the main container
+    const layoutPanels = document.querySelectorAll('.menu-panel');
 
     function openSidebar() {
         sidebarDashboard.classList.add('open');
@@ -60,8 +63,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // UPDATED INTERACTION MECHANISM: Handles both sidebar auto-closing AND instant content panel switching
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            const targetPanelId = link.getAttribute('data-target');
+            
+            // Only process tab switching if the link actually has a data-target defined
+            if (targetPanelId) {
+                e.preventDefault(); // Prevents standard link jumps/Vercel reloads
+
+                // 1. Remove active markers from all link elements and panels
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                layoutPanels.forEach(p => p.classList.remove('active'));
+
+                // 2. Set chosen tab and container layout view blocks to active
+                link.classList.add('active');
+                const targetPanel = document.getElementById(targetPanelId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            }
+            
+            // Keeps your existing closing drawer functionality completely operational
             closeSidebar();
         });
     });
@@ -86,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 // --- Hardware-Accelerated Desktop Slider Engine ---
 const viewport = document.getElementById('inventory-viewport');
 const slideLeftBtn = document.getElementById('slide-left-btn');
@@ -111,6 +135,7 @@ if (viewport && slideLeftBtn && slideRightBtn) {
         });
     });
 }
+
 // --- Hardware-Accelerated 3-Step Funnel Slider Engine ---
 const funnelViewport = document.getElementById('funnel-viewport-track');
 const funnelLeftBtn = document.getElementById('funnel-left-btn');
