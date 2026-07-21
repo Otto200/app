@@ -22,25 +22,9 @@
             <a href="home.html" class="logout-btn">Log Out</a>
         </div>
         
-        <!-- TradingView Dynamic Speed Concept Ticker -->
-        <div class="ticker-bar">
-            <div class="ticker-wrap">
-                <div class="ticker-track">
-                    <span class="ticker-item">BTCUSD <span class="ticker-up">▲ $64,250.50 (+1.4%)</span></span>
-                    <span class="ticker-item">EURUSD <span class="ticker-down">▼ 1.08420 (-0.22%)</span></span>
-                    <span class="ticker-item">GBPUSD <span class="ticker-up">▲ 1.29110 (+0.05%)</span></span>
-                    <span class="ticker-item">AUDUSD <span class="ticker-down">▼ 0.66810 (-0.41%)</span></span>
-                    <span class="ticker-item">XAUUSD <span class="ticker-up">▲ $2,415.80 (+0.88%)</span></span>
-                    <!-- Duplicated text string tracking to preserve continuous seamless marquee loop -->
-                    <span class="ticker-item">BTCUSD <span class="ticker-up">▲ $64,250.50 (+1.4%)</span></span>
-                    <span class="ticker-item">EURUSD <span class="ticker-down">▼ 1.08420 (-0.22%)</span></span>
-                    <span class="ticker-item">GBPUSD <span class="ticker-up">▲ 1.29110 (+0.05%)</span></span>
-                    <span class="ticker-item">AUDUSD <span class="ticker-down">▼ 0.66810 (-0.41%)</span></span>
-                    <span class="ticker-item">XAUUSD <span class="ticker-up">▲ $2,415.80 (+0.88%)</span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+       <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
+
+<tv-ticker-tape symbols="FOREXCOM:SPXUSD,FOREXCOM:NSXUSD,FOREXCOM:DJI,FX:EURUSD,CMCMARKETS:GOLD,OANDA:GBPUSD,FX:USDJPY,OANDA:GBPJPY" item-size="compact"></tv-ticker-tape>
 
     <!-- SIDE NAVIGATION DISPATCH CONTAINER (DASHBOARD MENU) -->
     <aside class="sidebar" id="appSidebar">
