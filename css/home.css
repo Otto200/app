@@ -985,3 +985,16 @@ p {
         display: none !important;
     }
 }
+
+/* --- Ecosystem Content Tab Switcher Rules --- */
+/* Hide all sub-panels by default */
+.menu-panel {
+    display: none;
+}
+
+/* Instantly show the panel when requested */
+.menu-panel.active {
+    display: block; 
+    /* NOTE: If your existing home layout relies on Flexbox/Grid inside <main>, 
+       change this to 'display: flex;' or 'display: grid;' to preserve your layout alignment */
+}
