@@ -380,11 +380,7 @@ tv-ticker-tape {
 
 body {
     font-family: var(--font-stack);
-    background-image: url('../img/bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #060606; /* Solid fallback base color */
     color: var(--text-primary);
     overflow: hidden;
     height: 100vh;
@@ -392,4 +388,28 @@ body {
     font-size: 13px;
     -webkit-font-smoothing: antialiased;
 }
+
+/* --- ISOLATED APP BACKGROUND BLUR LAYER --- */
+.app-bg-blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Path adjustment if your stylesheet is hidden inside a sub-folder */
+    background-image: url('../img/bg.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Applies a heavy, premium blur effect exclusively to the image asset */
+    filter: blur(12px); 
+    -webkit-filter: blur(12px); /* Android webview scaling optimization */
+    
+    /* Increases the scale slightly to hide any white distorted borders caused by the blur filter */
+    transform: scale(1.05); 
+    
+    z-index: -1; /* Pushes the layer behind all app panels and text links safely */
+}
+
 
