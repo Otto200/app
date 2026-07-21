@@ -376,3 +376,77 @@ tv-ticker-tape {
     height: 100% !important;
     display: block;
 }
+
+/* --- HTML5 LIVE BACKGROUND OVERLAY CONTROLS --- */
+#liveTradingBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* Sits flat underneath all navigation panels */
+    pointer-events: none; /* Allows natural clicks to pass straight through to text links */
+    background-color: #060606; /* Deep brand base black */
+}
+
+/* --- MAIN APP BODY CONTAINER --- */
+.app-body {
+    position: fixed;
+    top: var(--top-nav-height);
+    bottom: var(--bottom-nav-height);
+    left: var(--sidebar-width);
+    right: 0;
+    overflow-y: auto;
+    padding: 12px;
+    z-index: 5; /* Pushes content layer over the canvas background safely */
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent; /* Allows HTML5 live canvas processing to show through natively */
+}
+
+/* Master card containers for your trading metrics text blocks */
+.trading-workspace {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.trading-panel {
+    background-color: rgba(17, 18, 20, 0.92); /* Frosted dark background panel transparency */
+    border: 1px solid rgba(31, 34, 38, 0.8);
+    backdrop-filter: blur(8px); /* Sleek translucent dashboard blurring overlay */
+    border-radius: 6px;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.panel-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.panel-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background-color: var(--brand-red);
+    border-radius: 2px;
+}
+
