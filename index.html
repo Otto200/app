@@ -8,10 +8,8 @@
 </head>
 <body>
 
-    <!-- Main Desktop Center Wrapper -->
-    <div class="login-wrapper">
-        
-        <!-- Facebook-Style Centered Container Matrix Modded -->
+    <!-- SECURE AUTHENTICATION SCREEN -->
+    <div id="login-screen" class="login-wrapper">
         <div class="login-card">
             <h1>Log into BankBugs|FX</h1>
             <h2>Existing Trader. Use MT5 ID</h2>
@@ -32,17 +30,40 @@
             </div>
         </div>
 
-        <!-- Meta-Style Brand Baseline Footer -->
         <div class="brand-footer">
-            <!-- Terminal Security Style SVG Grid Icon -->
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00FF00" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             <span>BankBugs|FX</span>
         </div>
-
     </div>
 
+    <!-- Login Authentication Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ADMIN_PASSKEY = "bugsadmin123"; 
+            const loginForm = document.getElementById("loginForm");
+            const mt5Input = document.getElementById("mt5Id");
+
+            // If a session is already active, skip login entirely
+            if (localStorage.getItem("bb_fx_session") === "authenticated") {
+                window.location.href = "dashboard.html";
+            }
+
+            if (loginForm) {
+                loginForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    if (mt5Input.value.trim() === ADMIN_PASSKEY) {
+                        // Store the session in browser storage
+                        localStorage.setItem("bb_fx_session", "authenticated");
+                        // Redirect directly to the dashboard page file
+                        window.location.href = "dashboard.html";
+                    } else {
+                        mt5Input.style.borderColor = "#FF3333";
+                        alert("ACCESS DENIED: Untrusted MT5 Signature Protocol.");
+                        setTimeout(() => { mt5Input.style.borderColor = "#009900"; }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
