@@ -37,15 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. GLOBAL CLICK TARGET: Auto-closes menu when tapping ANYWHERE outside the menu drawer
-    document.addEventListener('click', (event) => {
-        // If the menu is open, and the user clicks something that is NOT the menu itself and NOT the hamburger button...
-        if (sidebarDashboard && sidebarDashboard.classList.contains('open')) {
-            if (!sidebarDashboard.contains(event.target) && !menuToggleBtn.contains(event.target)) {
+    // NEW INTERACTION MECHANISM: Auto-closes sidebar if user clicks main page content text or backgrounds
+    if (mainContentBody) {
+        mainContentBody.addEventListener('click', () => {
+            // Only fires close protocol if the sidebar dashboard is actually open
+            if (sidebarDashboard.classList.contains('open')) {
                 closeSidebar();
             }
-        }
-    });
+        });
+    }
 
     // 4. Safety block: Clicks inside the actual sidebar menu panel will not close it
     if (sidebarDashboard) {
