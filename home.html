@@ -299,36 +299,39 @@
         </div>
 
     </div>
-.............................................................................
 
-<!-- Inside home.html -->
-<section id="our-services">
-    <div class="services-container">
+
+<!-- YOUR MENU BUTTON -->
+<!-- This calls a script function called 'toggleServices()' when clicked -->
+<a href="javascript:void(0)" onclick="toggleServices()" class="your-existing-button-classes">Our Services</a>
+
+<!-- THE POP-UP STRUCTURE (Add to home.html) -->
+<!-- We add a background overlay 'services-popup-overlay' that dims the screen -->
+<div id="our-services" class="services-popup-overlay">
+    <div class="services-modal-content">
+        <!-- Close button to dismiss the popup -->
+        <span class="services-close-btn" onclick="toggleServices()">&times;</span>
+        
         <h2 class="services-title">Our Services</h2>
         <p class="services-intro">We empower PNG traders through three core institutional pillars:</p>
         
         <div class="services-grid">
-            <!-- Pillar 1 -->
             <div class="service-card">
                 <h3 class="card-title">Elite Trading Ecosystem</h3>
                 <p class="card-text">Direct access to precise, institutional-grade execution platforms and reliable market data feeds.</p>
             </div>
-            
-            <!-- Pillar 2 -->
             <div class="service-card">
                 <h3 class="card-title">Risk &amp; Discipline Architecture</h3>
                 <p class="card-text">Tailored risk management frameworks engineered to protect your capital and ensure market survival.</p>
             </div>
-            
-            <!-- Pillar 3 -->
             <div class="service-card">
                 <h3 class="card-title">Dedicated Local Desk Support</h3>
                 <p class="card-text">Step-by-step personalized guidance for your local platform setups, live account configurations, and banking structures.</p>
             </div>
         </div>
     </div>
-</section>
-...........................................................................................................
+</div>
+
     
 
     
