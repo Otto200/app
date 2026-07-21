@@ -22,9 +22,16 @@
             <a href="home.html" class="logout-btn">Log Out</a>
         </div>
         
-       <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
-
-<tv-ticker-tape symbols="FOREXCOM:SPXUSD,FOREXCOM:NSXUSD,FOREXCOM:DJI,FX:EURUSD,CMCMARKETS:GOLD,OANDA:GBPUSD,FX:USDJPY,OANDA:GBPJPY" item-size="compact"></tv-ticker-tape>
+              <!-- Modern TradingView Web-Component Live Ticker -->
+        <div class="ticker-bar">
+            <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js"></script>
+            <tv-ticker-tape 
+                symbols="FOREXCOM:SPXUSD,FOREXCOM:NSXUSD,FOREXCOM:DJI,FX:EURUSD,CMCMARKETS:GOLD,OANDA:GBPUSD,FX:USDJPY,OANDA:GBPJPY" 
+                item-size="compact"
+                theme="dark"
+                background-color="transparent">
+            </tv-ticker-tape>
+        </div>
 
     <!-- SIDE NAVIGATION DISPATCH CONTAINER (DASHBOARD MENU) -->
     <aside class="sidebar" id="appSidebar">
