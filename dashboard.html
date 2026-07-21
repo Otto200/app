@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BankBugs|FX - Main Dashboard</title>
+    <title>BankBugs|FX - Terminal Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
-    <!-- Security Gatekeeper: Kicks user out back to login if they aren't authenticated -->
     <script>
         if (localStorage.getItem("bb_fx_session") !== "authenticated") {
             window.location.href = "index.html";
@@ -14,210 +13,184 @@
 </head>
 <body>
 
-    <!-- THE BANKBUGS|FX INTERACTIVE MASTER DASHBOARD SHELL -->
     <div id="app-shell" class="app-container">
         
-        <!-- App Header Component -->
+        <!-- Header Console -->
         <header class="app-header">
             <div class="logo-area">
                 <span class="pulse-dot"></span>
                 <h1>BankBugs|FX</h1>
+                <span class="terminal-badge">SYS_LIVE</span>
             </div>
-            <button id="logoutBtn" class="btn-logout" title="Disconnect Session">
+            <button id="logoutBtn" class="btn-logout" title="Disconnect">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF00" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
             </button>
         </header>
 
         <!-- Main Dynamic Viewport Scrolling Pane -->
-        <main class="app-scroll-content">
+        <main class="app-scroll-content menu-dashboard-layout">
 
-            <!-- TABS AREA 1: MAIN OPERATIONAL DASHBOARD -->
-            <section id="pane-dashboard" class="dashboard-view-pane view-active">
-                <!-- 1. Introduction Module -->
-                <div class="matrix-card glow-card">
-                    <h3>[ 01 // OPERATIONAL INTRO ]</h3>
-                    <p class="intro-text">Welcome back, Operator. This console houses your core algorithmic matrices, custom liquidity frameworks, and internal execution paths.</p>
+            <!-- THE 13 ITEM SELECTOR MENU -->
+            <div class="terminal-menu-sidebar">
+                <div class="menu-header">// MODULE SELECTOR</div>
+                <nav class="menu-nav-list">
+                    <button class="menu-item-btn active-menu" data-module="mod-intro"><span>01.</span> Introduction</button>
+                    <button class="menu-item-btn" data-module="mod-liquidity"><span>02.</span> Liquidity Map (Bias)</button>
+                    <button class="menu-item-btn" data-module="mod-strategies"><span>03.</span> 10 Strategies/systems</button>
+                    <button class="menu-item-btn" data-module="mod-execution"><span>04.</span> Types of Execution/Entry</button>
+                    <button class="menu-item-btn" data-module="mod-time"><span>05.</span> Time based Execution</button>
+                    <button class="menu-item-btn" data-module="mod-mindset"><span>06.</span> Discipline Mindset</button>
+                    <button class="menu-item-btn" data-module="mod-risk"><span>07.</span> Risk Control Model</button>
+                    <button class="menu-item-btn" data-module="mod-news"><span>08.</span> News Sources</button>
+                    <button class="menu-item-btn" data-module="mod-journal"><span>09.</span> Journal Layout</button>
+                    <button class="menu-item-btn" data-module="mod-copy"><span>10.</span> Copy Trading</button>
+                    <button class="menu-item-btn" data-module="mod-review"><span>11.</span> 1 on 1 Live Review</button>
+                    <button class="menu-item-btn" data-module="mod-ecosystem"><span>12.</span> Ecosystem Flow</button>
+                    <button class="menu-item-btn" data-module="mod-platforms"><span>13.</span> Exact Trading Platforms</button>
+                </nav>
+            </div>
+
+            <!-- DYNAMIC DISPLAY SCREEN AREA -->
+            <div class="terminal-display-screen">
+                
+                <!-- 01. Introduction Panel -->
+                <div id="mod-intro" class="module-content-pane pane-active">
+                    <div class="module-title">[ 01 // INTRO ]</div>
+                    <p class="matrix-text">Welcome back, Trader. This interface serves as your complete localized trading environment. Select any protocol from the menu to activate the screen array inputs.</p>
                 </div>
 
-                <!-- 2. Liquidity Map Bias Module -->
-                <div class="matrix-card">
-                    <h3>[ 02 // LIQUIDITY MAP & BIAS ]</h3>
-                    <div class="bias-indicator">CURRENT BIAS: <span class="bullish-text">BULLISH EXPANSION</span></div>
-                    <div class="map-grid">
-                        <div class="map-item"><span>HTF Premium Array:</span> <strong class="bearish-text">1.0920</strong></div>
-                        <div class="map-item"><span>HTF Discount Array:</span> <strong class="bullish-text">1.0750</strong></div>
+                <!-- 02. Liquidity Map Panel -->
+                <div id="mod-liquidity" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 02 // LIQUIDITY MAP & BIAS ]</div>
+                    <div class="bias-indicator">CURRENT BIAS: <span class="bullish-text">BULLISH ORDERFLOW</span></div>
+                    <div class="map-rows">
+                        <div class="map-row-item"><span>HTF Premium Array:</span> <strong class="bearish-text font-mono">1.09210</strong></div>
+                        <div class="map-row-item"><span>HTF Discount Array:</span> <strong class="bullish-text font-mono">1.07540</strong></div>
                     </div>
                 </div>
 
-                <!-- 3. News Sources Module -->
-                <div class="matrix-card">
-                    <h3>[ 03 // MACRO NEWS SOURCES ]</h3>
-                    <div class="news-list">
-                        <a href="https://forexfactory.com" target="_blank" class="news-link">⚡ Forex Factory Calendar ↗</a>
-                        <a href="https://bloomberg.com" target="_blank" class="news-link">⚡ Bloomberg Terminal Feed ↗</a>
-                    </div>
-                </div>
-
-                <!-- 4. Exact Trading Platforms Module -->
-                <div class="matrix-card">
-                    <h3>[ 04 // TARGET PLATFORMS ]</h3>
-                    <div class="platform-strip">
-                        <div class="platform-badge">MetaTrader 5 (MT5)</div>
-                        <div class="platform-badge">TradingView Matrix</div>
-                    </div>
-                </div>
-
-                <!-- 5. 1 on 1 Live Review Portal Module -->
-                <div class="matrix-card">
-                    <h3>[ 05 // 1 ON 1 LIVE REVIEW ]</h3>
-                    <p class="small-muted">Direct institutional review channel link.</p>
-                    <button class="matrix-btn-action">Launch Secure Live Review Stream</button>
-                </div>
-            </section>
-
-
-            <!-- TABS AREA 2: EXECUTION RULES & STRATEGIES -->
-            <section id="pane-strategies" class="dashboard-view-pane view-hidden">
-                <!-- 6. 10 Strategies/Systems Playbook Matrix -->
-                <div class="matrix-card">
-                    <h3>[ 06 // THE 10 TRADING SYSTEMS ]</h3>
-                    <div class="scroll-carousel-x">
-                        <div class="carousel-item active-strat"><h5>01. London Breakout</h5><span class="badge-win">68% WR</span></div>
-                        <div class="carousel-item"><h5>02. NY Liquidity Sweep</h5><span class="badge-win">72% WR</span></div>
-                        <div class="carousel-item"><h5>03. Asia Range Scalp</h5><span class="badge-win">59% WR</span></div>
-                        <div class="carousel-item"><h5>04. AMD Expansion</h5><span class="badge-win">65% WR</span></div>
-                        <div class="carousel-item"><h5>05. Fair Value Mitigation</h5><span class="badge-win">61% WR</span></div>
-                        <div class="carousel-item"><h5>06. OrderBlock Reversal</h5><span class="badge-win">64% WR</span></div>
-                        <div class="carousel-item"><h5>07. Premium/Discount Flip</h5><span class="badge-win">70% WR</span></div>
-                        <div class="carousel-item"><h5>08. H4 Market Shift</h5><span class="badge-win">74% WR</span></div>
-                        <div class="carousel-item"><h5>09. Catalyst Momentum</h5><span class="badge-win">55% WR</span></div>
-                        <div class="carousel-item"><h5>10. Macro Flow Trend</h5><span class="badge-win">67% WR</span></div>
-                    </div>
-                </div>
-
-                <!-- 7. Entry Models Module -->
-                <div class="matrix-card">
-                    <h3>[ 07 // ENTRY MODELS ]</h3>
-                    <ul class="matrix-list">
-                        <li><span>Model Alpha:</span> 5m Market Structure Shift + FVG Conformation</li>
-                        <li><span>Model Beta:</span> HTF Liquidity Sweep + LTF SMT Divergence</li>
+                <!-- 03. 10 Strategies Playbook -->
+                <div id="mod-strategies" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 03 // 10 SYSTEMS PLAYBOOK ]</div>
+                    <ul class="matrix-bullet-list">
+                        <li>01. London Breakout Setup</li>
+                        <li>02. New York Liquidity Sweep</li>
+                        <li>03. Asia Range Scalper Matrix</li>
+                        <li>04. Accumulation Manipulation Distribution (AMD)</li>
+                        <li>05. Fair Value Gap Mitigation Model</li>
+                        <li>06. Order Block Mitigation Shift</li>
+                        <li>07. Premium / Discount Equilibrium Flip</li>
+                        <li>08. H4 Structural Market Shift Matrix</li>
+                        <li>09. High-Impact News Catalyst Trend</li>
+                        <li>10. Macro Flow Volume System</li>
                     </ul>
                 </div>
 
-                <!-- 8. Time Based Execution Module -->
-                <div class="matrix-card">
-                    <h3>[ 08 // TIME-BASED WINDOWS ]</h3>
-                    <div class="time-grid">
-                        <div class="time-block active-time"><span>London Open:</span> 07:00 - 10:00 UTC</div>
-                        <div class="time-block active-time"><span>New York Open:</span> 12:00 - 15:00 UTC</div>
-                        <div class="time-block muted-time"><span>Asia Session:</span> No Execution Profile</div>
-                    </div>
+                <!-- 04. Execution Models -->
+                <div id="mod-execution" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 04 // ENTRY & EXECUTION MODELS ]</div>
+                    <p class="matrix-text font-mono">> Entry Alpha: Market Structure Shift + FVG Conformation.</p>
+                    <p class="matrix-text font-mono">> Entry Beta: HTF Liquidity Sweep + SMT Divergence Confirmation.</p>
                 </div>
 
-                <!-- 9. Discipline Mindset Checklist Module -->
-                <div class="matrix-card">
-                    <h3>[ 09 // DISCIPLINE MINDSET ]</h3>
-                    <label class="checkbox-container">
-                        <input type="checkbox"> Have I verified high-impact economic news drops?
-                    </label>
-                    <label class="checkbox-container">
-                        <input type="checkbox"> Am I emotionally detached from my previous outcome?
-                    </label>
+                <!-- 05. Time-based Windows -->
+                <div id="mod-time" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 05 // TIME-BASED WINDOWS ]</div>
+                    <div class="timeline-node"><strong>London Killzone:</strong> 07:00 - 10:00 UTC</div>
+                    <div class="timeline-node"><strong>New York Killzone:</strong> 12:00 - 15:00 UTC</div>
                 </div>
 
-                <!-- 10. Risk Control Architecture Module -->
-                <div class="matrix-card">
-                    <h3>[ 10 // RISK CONTROL MATRIX ]</h3>
-                    <div class="risk-stats">
-                        <div><span>Max Risk Per Entry:</span> <strong>0.50% - 1.00%</strong></div>
-                        <div><span>Max Daily Drawdown Cap:</span> <strong class="bearish-text">2.00% MAX</strong></div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- TABS AREA 3: JOURNAL & OPERATIONAL SYSTEMS -->
-            <section id="pane-operations" class="dashboard-view-pane view-hidden">
-                <!-- 11. Journal Layout Matrix Module -->
-                <div class="matrix-card">
-                    <h3>[ 11 // THE JOURNAL GRID ]</h3>
-                    <div class="table-container">
-                        <table class="matrix-table">
-                            <thead>
-                                <tr><th>Pair</th><th>Setup</th><th>R:R</th><th>PnL</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>EURUSD</td><td>London Sweep</td><td>1:3.5</td><td class="bullish-text">+$1,420</td></tr>
-                                <tr><td>GBPJPY</td><td>NY Mitigation</td><td>1:2.0</td><td class="bearish-text">-$450</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <!-- 06. Discipline Mindset Checklist -->
+                <div id="mod-mindset" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 06 // DISCIPLINE MINDSET ]</div>
+                    <label class="check-row"><input type="checkbox"> Checked today's macroeconomic event risk windows?</label>
+                    <label class="check-row"><input type="checkbox"> Fully detached from the PnL outcome of the last position?</label>
                 </div>
 
-                <!-- 12. Copy Trading Controls Module -->
-                <div class="matrix-card">
-                    <h3>[ 12 // COPY TRADING INTERNET ]</h3>
-                    <p class="small-muted">Master terminal broadcasting array status.</p>
-                    <div class="status-row"><span>Broadcasting Engine:</span> <span class="active-tag">ONLINE</span></div>
+                <!-- 07. Risk Control Model -->
+                <div id="mod-risk" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 07 // RISK ARCHITECTURE ]</div>
+                    <p class="matrix-text">Max Allocation per entry: <strong class="text-highlight">0.50% - 1.00%</strong></p>
+                    <p class="matrix-text">Daily Drawdown Hard Boundary: <strong class="bearish-text">2.00% MAX</strong></p>
                 </div>
 
-                <!-- 13. Ecosystem Flow Process Module -->
-                <div class="matrix-card">
-                    <h3>[ 13 // ECOSYSTEM PROCESS FLOW ]</h3>
-                    <div class="flow-chart">
-                        <span>HTF Bias Mapping</span> ➔ <span>Killzone Arrival</span> ➔ <span>LTF Entry Trigger</span> ➔ <span>Risk Mitigated Scale Out</span>
-                    </div>
+                <!-- 08. Macro News Channels -->
+                <div id="mod-news" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 08 // MACRO NEWS CHANNELS ]</div>
+                    <a href="https://forexfactory.com" target="_blank" class="news-link">⚡ Forex Factory Calendar ↗</a><br><br>
+                    <a href="https://bloomberg.com" target="_blank" class="news-link">⚡ Bloomberg News Feed ↗</a>
                 </div>
-            </section>
+
+                <!-- 09. Ledger Journal Grid -->
+                <div id="mod-journal" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 09 // TRANSACTION LEDGER JOURNAL ]</div>
+                    <table class="premium-table">
+                        <thead><tr><th>ASSET</th><th>SETUP</th><th>R:R</th><th>PNL</th></tr></thead>
+                        <tbody>
+                            <tr><td>EURUSD</td><td>London Sweep</td><td>1:3.5</td><td class="bullish-text">+$1,420</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 10. Copy Trading Console -->
+                <div id="mod-copy" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 10 // COPY TRADING MASTER ]</div>
+                    <p class="matrix-text">Engine broadcast state: <span class="active-tag">ONLINE_BROADCASTING</span></p>
+                </div>
+
+                <!-- 11. Live Sync Review Stream -->
+                <div id="mod-review" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 11 // 1-ON-1 LIVE SYNC ]</div>
+                    <button class="matrix-btn-action">INITIALIZE SECURE LIVE REVIEW STREAM</button>
+                </div>
+
+                <!-- 12. Ecosystem Flow Chart -->
+                <div id="mod-ecosystem" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 12 // SYSTEM ECOSYSTEM FLOW ]</div>
+                    <div class="flow-pipeline-graphic">Bias Map ➔ Killzone Window ➔ Entry Trigger ➔ Mitigate Target</div>
+                </div>
+
+                <!-- 13. Terminal Platforms -->
+                <div id="mod-platforms" class="module-content-pane pane-hidden">
+                    <div class="module-title">[ 13 // TARGET TRADING PLATFORMS ]</div>
+                    <span class="text-pill">MetaTrader 5 (MT5 Framework)</span><br><br>
+                    <span class="text-pill">TradingView Graphics Console</span>
+                </div>
+
+            </div>
 
         </main>
+    </div>
 
-              <!-- Fixed Bottom Tab Bar -->
-        <footer class="app-nav-bar">
-            <button class="footer-nav-btn nav-active" data-target="pane-dashboard">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-                <span>Dashboard</span>
-            </button>
-            <button class="footer-nav-btn" data-target="pane-strategies">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline></svg>
-                <span>Execution</span>
-            </button>
-            <button class="footer-nav-btn" data-target="pane-operations">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                <span>Operations</span>
-            </button>
-        </footer>
-
-    </div> <!-- Close app-container shell -->
-
-    <!-- Dashboard App Controller Script -->
+       <!-- Active Modular Selector Script Engine -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const logoutBtn = document.getElementById("logoutBtn");
-            const navButtons = document.querySelectorAll(".footer-nav-btn");
-            const appViews = document.querySelectorAll(".dashboard-view-pane");
+            const menuButtons = document.querySelectorAll(".menu-item-btn");
+            const modulePanes = document.querySelectorAll(".module-content-pane");
 
-            // Handle Tab Switching inside the Dashboard Page
-            navButtons.forEach(button => {
+            // Handle switching contents when clicking items in the 13 menu links list
+            menuButtons.forEach(button => {
                 button.addEventListener("click", () => {
-                    const targetViewId = button.getAttribute("data-target");
+                    const targetModuleId = button.getAttribute("data-module");
 
-                    navButtons.forEach(btn => btn.classList.remove("nav-active"));
-                    appViews.forEach(view => {
-                        view.classList.add("view-hidden");
-                        view.classList.remove("view-active");
+                    // Clear previous states
+                    menuButtons.forEach(btn => btn.classList.remove("active-menu"));
+                    modulePanes.forEach(pane => {
+                        pane.classList.add("pane-hidden");
+                        pane.classList.remove("pane-active");
                     });
 
-                    button.classList.add("nav-active");
-                    const activeView = document.getElementById(targetViewId);
-                    if (activeView) {
-                        activeView.classList.remove("view-hidden");
-                        activeView.classList.add("view-active");
+                    // Set target states active
+                    button.classList.add("active-menu");
+                    const targetPane = document.getElementById(targetModuleId);
+                    if (targetPane) {
+                        targetPane.classList.remove("pane-hidden");
+                        targetPane.classList.add("pane-active");
                     }
                 });
             });
 
-            // Handle Logout Process
             if (logoutBtn) {
                 logoutBtn.addEventListener("click", () => {
                     localStorage.removeItem("bb_fx_session");
@@ -228,3 +201,4 @@
     </script>
 </body>
 </html>
+
