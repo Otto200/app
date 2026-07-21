@@ -335,3 +335,29 @@ a, button {
         left: 0;
     }
 }
+/* --- MOBILE TRIGGER RULES OVERWRITE --- */
+@media (max-width: 768px) {
+    /* Adjusts the open trigger button to perfectly mirror the logout button's dimensions */
+    .mobile-menu-trigger {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid var(--brand-gold);
+        color: var(--brand-gold);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        margin-right: 8px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+    
+    /* Interactive states matching the app profile */
+    .mobile-menu-trigger:active {
+        background-color: var(--brand-gold);
+        color: #000000;
+    }
+}
