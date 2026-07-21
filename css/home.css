@@ -1214,3 +1214,75 @@ p {
         justify-content: center;
     }
 }
+
+
+/* --- Panel 3: Premium App Icon & Download Card Styles --- */
+.app-branding-download-wrapper {
+    background: #111116; /* Dark slate matching your ecosystem layout */
+    border: 1px solid #22222b;
+    border-radius: 14px;
+    padding: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    min-width: 280px;
+    max-width: 320px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.app-icon-display-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1c1c24, #0d0d12);
+    border: 2px solid #cca43b; /* Premium gold accent border rim */
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #cca43b;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 0 20px rgba(204, 164, 59, 0.15);
+}
+
+.app-meta-details {
+    margin-bottom: 1.5rem;
+}
+
+.app-branding-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 0.4rem 0;
+}
+
+.app-version-badge {
+    font-size: 0.75rem;
+    color: #a0a0b0;
+    background: #1c1c24;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    border: 1px solid #252535;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.apk-download-trigger {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Ensure mobile layout optimization responsiveness */
+@media (max-width: 480px) {
+    .app-branding-download-wrapper {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+    }
+}
