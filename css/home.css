@@ -1286,3 +1286,12 @@ p {
         display: flex;
     }
 }
+
+
+/* --- App Icon Image Scaling --- */
+.app-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Forces image to neatly fill the container space evenly */
+    border-radius: 16px; /* Matches the inner corner curvature of your box boundary */
+}
