@@ -7,17 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarLinks = document.querySelectorAll('.sidebar-item');
     const claimButton = document.getElementById('claim-btn');
 
-    // NEW SELECTOR: Grabs your entire main content container body section
-    const mainContentBody = document.querySelector('menu-toggle-btn');
+    // FIXED SELECTOR: Targets the entire services container section on your page
+    const mainServicesContent = document.getElementById('our-services');
 
     function openSidebar() {
-        sidebarDashboard.classList.add('open');
-        sidebarOverlay.classList.add('visible');
+        if (sidebarDashboard && sidebarOverlay) {
+            sidebarDashboard.classList.add('open');
+            sidebarOverlay.classList.add('visible');
+        }
     }
 
     function closeSidebar() {
-        sidebarDashboard.classList.remove('open');
-        sidebarOverlay.classList.remove('visible');
+        if (sidebarDashboard && sidebarOverlay) {
+            sidebarDashboard.classList.remove('open');
+            sidebarOverlay.classList.remove('visible');
+        }
     }
 
     // High Compatibility Action Event Registration Engine Blocks
@@ -43,11 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // NEW INTERACTION MECHANISM: Auto-closes sidebar if user clicks main page content text or backgrounds
-    if (mainContentBody) {
-        mainContentBody.addEventListener('click', () => {
+    // NEW INTERACTION MECHANISM: Auto-closes sidebar when user taps on the services section layout
+    if (mainServicesContent) {
+        mainServicesContent.addEventListener('click', () => {
             // Only fires close protocol if the sidebar dashboard is actually open
-            if (sidebarDashboard.classList.contains('open')) {
+            if (sidebarDashboard && sidebarDashboard.classList.contains('open')) {
                 closeSidebar();
             }
         });
@@ -60,8 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Auto-closes sidebar when a user clicks on any specific menu list links
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
             closeSidebar();
         });
     });
+});
