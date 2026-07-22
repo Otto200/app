@@ -5,21 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sidebarLinks = document.querySelectorAll(".sidebar-link");
     const bottomLinks = document.querySelectorAll(".bottom-nav-item");
 
-    // UI Toggle Controller
-    function toggleSidebar() {
-        if (window.innerWidth <= 768) {
-            body.classList.toggle("sidebar-open");
-        } else {
-            body.classList.toggle("sidebar-closed");
-        }
-    }
-
-    // Auto collapse layout on mobile screen interactions
-    function closeSidebarOnMobile() {
-        if (window.innerWidth <= 768 && body.classList.contains("sidebar-open")) {
-            body.classList.remove("sidebar-open");
-        }
-    }
+ 
 
     // Event Listeners for explicit layout buttons
     if (sidebarToggleBtn) sidebarToggleBtn.addEventListener("click", toggleSidebar);
