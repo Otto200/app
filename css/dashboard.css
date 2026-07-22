@@ -80,7 +80,7 @@ a, button {
     width: 35px;
     height: 35px;
     background-color: var(--brand-red);
-    border-radius: 4px;
+    border-radius: 8px;
     display: inline-block;
     border: 1px solid var(--brand-gold);
 }
