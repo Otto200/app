@@ -6,6 +6,9 @@
     <title>BankBugs|FX Ecosystem</title>
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Link to your modular home tab styles -->
+     <link rel="stylesheet" href="css/home-panel.css">
+
 </head>
 <body>
 
@@ -35,9 +38,41 @@
         </div>
 
     <!-- APP MIDDLE CONTENT LAYER VIEWPORT -->
-    <main class="app-body" id="appBody">
-        <h2 class="welcome-heading">Welcome to Bankbugs|fx</h2>
-        <p class="welcome-text">The container layout skeleton is locked. The navigation structural layout auto-scales and shifts padding seamlessly across Android WebViews, screens, tablets, and Desktop monitor panels.</p>
+<main class="app-body" id="appBody">
+        
+       <!-- TAB 1: HOME VIEW -->
+<section id="tab-home" class="tab-content active-view">
+    <div class="welcome-header-block">
+        <h2 class="welcome-heading">Welcome to Bankbugs|fx Ecosystem</h2>
+        <p class="welcome-text">Your gateway to tier-one institutional trading conditions, automated algorithmic systems, and professional networking channels.</p>
+    </div>
+
+    <!-- ECOSYSTEM FOCUS CARDS -->
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="card-icon">⚡</div>
+            <h3>Institutional Exposure</h3>
+            <p>Trade with direct institutional liquidity access. Benefit from ultra-low latency execution speeds, tighter raw spreads, and minimal slippage metrics.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon">🤖</div>
+            <h3>Automated System</h3>
+            <p>Leverage our advanced proprietary algorithmic system. Remove emotion from your execution framework by following systematic rule-based setups designed to extract steady market yields.</p>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon">📊</div>
+            <h3>Live Trade Room</h3>
+            <p>Watch market structures break and execute trades live alongside the system core. Take advantage of automated ideas processed right inside your panel viewport.</p>
+        </div>
+    </div>
+
+    <!-- VALUE PROPOSITION INFORMATION BANNER -->
+    <div class="info-banner">
+        <h3>Our Core Mission</h3>
+        <p>We bridge the gap between high-level institutional market access and systematic modern retail environments. By integrating raw liquidity, automated data parsing, and an active trader network, we ensure you have everything needed to treat trading as a scalable business framework.</p>
+    </div>
+</section>
+
     </main>
 
 
@@ -88,5 +123,8 @@
 
     <!-- Link to external javascript execution layer -->
     <script src="js/dashboard.js"></script>
+    <!-- Script layer dedicated strictly to home page interactions -->
+    <script src="js/home-panel.js"></script>
+
 </body>
 </html>
