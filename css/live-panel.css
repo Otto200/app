@@ -96,41 +96,6 @@
 }
 
 /* Chart Canvas Image Containers */
-/* --- Locate this block in css/live-panel.css --- */
-.review-image-viewport {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    
-    /* ────────────── ADJUST RATIO HERE ────────────── */
-    aspect-ratio: 16 / 9; /* Default widescreen format */
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.review-chart-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.review-image-viewport:hover .review-chart-img {
-    transform: scale(1.04);
-}
-
-.review-image-viewport {
-    /* ... keep all your previous CSS properties exactly the same ... */
-    
-    cursor: pointer; /* Tells desktop users the item can be interacted with */
-    user-select: none; /* Prevents text or images from accidentally getting highlighted/blue while dragging */
-}
-
 /* --- UPDATED VIEWPORT TO ALLOW HORIZONTAL CAROUSEL --- */
 .review-image-viewport {
     background: rgba(0, 0, 0, 0.4);
@@ -192,3 +157,10 @@
     z-index: 5;
     letter-spacing: 0.5px;
 }
+.review-image-viewport {
+    /* ... keep all your previous CSS properties exactly the same ... */
+    
+    cursor: pointer; /* Tells desktop users the item can be interacted with */
+    user-select: none; /* Prevents text or images from accidentally getting highlighted/blue while dragging */
+}
+
