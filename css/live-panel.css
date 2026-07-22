@@ -1,0 +1,120 @@
+/* --- WEEKLY AUDIT TERMINAL CONTAINER --- */
+.reviews-viewport {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- INDIVIDUAL REVIEW NODE CARDS --- */
+.review-node-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-node-card:hover {
+    border-color: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- UPPER ROW: DATA METADATA LAYER --- */
+.review-upper-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.review-meta-block h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.review-date-stamp {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Institutional Result Badges */
+.performance-badge {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.badge-profit-tier {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.badge-risk-tier {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+/* --- LOWER ROW: ASYMMETRICAL SPLIT GRID --- */
+.review-split-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Screen width rule scaling up to beautiful row orientation for PC screens */
+@media (min-width: 768px) {
+    .review-split-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+}
+
+/* Brief Commentary Blocks */
+.review-commentary-panel {
+    border-left: 2px solid var(--brand-gold);
+    padding-left: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-commentary-panel p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Chart Canvas Image Containers */
+.review-image-viewport {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-chart-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.review-image-viewport:hover .review-chart-img {
+    transform: scale(1.04);
+}
