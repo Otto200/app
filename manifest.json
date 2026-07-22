@@ -23,8 +23,8 @@
     }
   ],
   "start_url": "/dashboard.html",
-  "background_color": "#0d0d0d",
-  "theme_color": "#d4af37",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
   "display": "standalone",
   "orientation": "portrait-primary",
   "categories": ["finance", "business"],
