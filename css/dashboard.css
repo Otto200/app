@@ -66,7 +66,7 @@ a, button {
     justify-content: space-between;
     align-items: center;
     padding: 6px 12px;
-    height: 50px;
+    height: 60px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -77,8 +77,8 @@ a, button {
 }
 
 .brand-logo {
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     background-color: var(--brand-red);
     border-radius: 4px;
     display: inline-block;
@@ -87,7 +87,7 @@ a, button {
 
 .brand-name {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 30px;
     letter-spacing: -0.3px;
 }
 
