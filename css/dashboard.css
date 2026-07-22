@@ -213,49 +213,25 @@ a, button {
 
 /* Tablet Mode */
 @media (max-width: 1024px) {
-    :root {
-        --sidebar-width: 240px;
-    }
+    /* Sidebar root variables removed */
 }
 
 /* Mobile Mode */
 @media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
     .app-body {
         left: 0;
     }
-    body.sidebar-open .sidebar {
-        transform: translateX(0);
-        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-    }
-    body.sidebar-open .app-body {
-        opacity: 0.4;
-        pointer-events: none;
-    }
-    .mobile-menu-trigger {
-        display: block !important;
-        background: none;
-        border: none;
-        color: var(--text-primary);
-        font-size: 18px;
-        margin-right: 8px;
-    }
+    /* Mobile sidebar trigger elements and open-state overlays removed */
 }
 
 /* PC Mode Safeguard */
 @media (min-width: 769px) {
-    .mobile-menu-trigger {
-        display: none !important;
-    }
-    body.sidebar-closed .sidebar {
-        transform: translateX(-100%);
-    }
-    body.sidebar-closed .app-body {
+    .app-body {
         left: 0;
     }
+    /* Closed sidebar frame logic removed */
 }
+
 /* --- MOBILE TRIGGER RULES OVERWRITE --- */
 @media (max-width: 768px) {
     /* Adjusts the open trigger button to perfectly mirror the logout button's dimensions */
