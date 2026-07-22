@@ -1,8 +1,14 @@
 {
   "short_name": "BankBugs|FX",
   "name": "BankBugs|FX Trading Ecosystem",
-  "description": "Institutional trading conditions, automated algorithmic systems, and professional networking channels.",
+  "description": "automated algorithmic systems",
   "icons": [
+    {
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
     {
       "src": "img/logo.webp",
       "type": "image/webp",
@@ -10,7 +16,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "/dashboard.html",
   "background_color": "#0d0d0d",
   "theme_color": "#d4af37",
   "display": "standalone",
