@@ -316,3 +316,13 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
+
+
+/* --- VIEW TAB HANDLING RULES --- */
+.tab-content {
+    display: none; /* Keeps all panels hidden by default */
+}
+
+.tab-content.active-view {
+    display: block; /* ONLY shows the panel that has the 'active-view' class */
+}
