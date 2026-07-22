@@ -16,9 +16,9 @@
     --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     
     /* Layout Dimensions */
-    --top-nav-height: 85px; /* Combined header + ticker */
-    --bottom-nav-height: 50px;
-    --sidebar-width: 260px;
+    --top-nav-height: 100px; /* Combined header + ticker */
+    --bottom-nav-height: 70px;
+    --sidebar-width: 270px;
 }
 
 /* --- GLOBAL RESET --- */
