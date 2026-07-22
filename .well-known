@@ -1,8 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.vercel.app_gilt_ten_88.twa",
-        "sha256_cert_fingerprints": ["0F:0A:E7:FD:6D:C9:65:72:FC:2F:24:92:16:9C:F6:27:24:89:BF:1A:8B:BE:84:93:FE:0F:DE:90:99:8C:3D:99"]
-      }
-    }]
