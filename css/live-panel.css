@@ -96,17 +96,22 @@
 }
 
 /* Chart Canvas Image Containers */
+/* --- Locate this block in css/live-panel.css --- */
 .review-image-viewport {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 6px;
     overflow: hidden;
     position: relative;
-    aspect-ratio: 16 / 9;
+    
+    /* ────────────── ADJUST RATIO HERE ────────────── */
+    aspect-ratio: 16 / 9; /* Default widescreen format */
+    
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 .review-chart-img {
     width: 100%;
