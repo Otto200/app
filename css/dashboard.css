@@ -363,7 +363,7 @@ a, button {
 }
 /* --- LIVE TICKER COMPONENT COUPLING --- */
 .ticker-bar {
-    height: 35px;
+    height: 45px;
     background-color: var(--bg-main);
     border-bottom: 1px solid var(--border-color);
     overflow: hidden;
