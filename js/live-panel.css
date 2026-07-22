@@ -1,0 +1,8 @@
+// Initialization engine specific to the Weekly Performance Audit Room
+document.addEventListener("DOMContentLoaded", () => {
+    const livePanel = document.getElementById("tab-live");
+    
+    if (livePanel) {
+        console.log("BankBugs | FX Weekly Performance Audit Desk initialized.");
+    }
+});
