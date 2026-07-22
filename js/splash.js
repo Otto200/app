@@ -4,9 +4,9 @@ const messages = [
 
     "Loading Trading systems...",
 
-    "Preparing Starter Dashboard...",
+    "Preparing Dashboard...",
 
-    "Loading Elite Experience...",
+    "Loading Member content...",
 
     "Syncing Platform...",
 
@@ -40,7 +40,7 @@ setTimeout(()=>{
 
     setTimeout(()=>{
 
-        window.location.href="home.html";
+        window.location.href="dashboard.html";
 
     },100);
 
@@ -50,6 +50,6 @@ setTimeout(() => {
   document.body.classList.add("fade-out");
 
   setTimeout(() => {
-    window.location.href = "home.html";
+    window.location.href = "dashboard.html";
   }, 800);
 }, 3000);
