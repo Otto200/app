@@ -52,15 +52,15 @@
 
 .deliverable-header {
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically balances icon with text */
     gap: 12px;
     margin-bottom: 8px;
 }
 
-.deliverable-icon {
-    font-size: 20px;
+.deliverable-header svg {
     flex-shrink: 0;
 }
+
 
 .deliverable-node h3 {
     color: #ffffff;
