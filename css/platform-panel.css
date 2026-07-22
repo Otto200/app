@@ -1,0 +1,121 @@
+/* --- TRADING PLATFORMS LAYOUT --- */
+.platforms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- BROKER HIGHLIGHT CARDS --- */
+.broker-showcase {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.broker-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--brand-gold);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.broker-title {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.broker-specs {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0 0 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.broker-specs li {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* --- SETUP & INTEGRATION TIMELINE --- */
+.setup-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.timeline-step {
+    display: flex;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 16px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: var(--brand-gold);
+    color: #000000;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.step-details h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+}
+
+.step-details p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- ACTION BUTTON ELEMENTS --- */
+.platform-action-btn {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.platform-action-btn:hover {
+    background: var(--brand-gold);
+    color: #000000;
+}
