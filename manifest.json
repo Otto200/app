@@ -4,9 +4,15 @@
   "description": "automated algorithmic systems",
   "icons": [
     {
-      "src": "img/icon-192.png",
+      "src": "img/icon-196.png",
       "type": "image/png",
-      "sizes": "192x192",
+      "sizes": "196x196",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
       "purpose": "any maskable"
     },
     {
