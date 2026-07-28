@@ -2,6 +2,29 @@
    BANKBUGS | FX LANDING PAGE ATOMIC COMPONENTS
    ========================================================================== */
 
+/* ==========================================================================
+   LANDING PAGE SYSTEM VIEWPORT UNLOCK
+   ========================================================================== */
+html, body {
+    position: relative !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important; /* Forces the browser to unlock vertical scrolling */
+}
+
+/* Ensure no parent containers accidentally inherit app viewport constraints */
+main, .app-body {
+    position: relative !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto !important;
+    overflow-y: visible !important;
+    padding: 0 !important;
+}
+
+
 /* Layout resets for structural components */
 body {
     overflow-x: hidden;
