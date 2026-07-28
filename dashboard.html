@@ -22,16 +22,24 @@
    <!-- Independent background layer to isolate the blur effect -->
     <div class="app-bg-blur-layer"></div>
     
- <!-- TOP NAVIGATION BAR WITH HEADER & MARQUEE TICKER -->
-    <nav class="top-nav">
-        <div class="header-main">
-            <div class="brand-zone">
-                <img src="img/logo.webp" alt="BankBugs|FX Logo" class="brand-logo">
-                <h1 class="brand-name">BankBugs<span>|FX</span></h1>
-            </div>
-            <!-- Logout action rerouting targeting home.html -->
-            <a href="lp.html" class="logout-btn">Log Out</a>
+<!-- TOP NAVIGATION BAR WITH HEADER & MARQUEE TICKER -->
+<nav class="top-nav">
+    <div class="header-main">
+        <div class="brand-zone">
+            <img src="img/logo.webp" alt="BankBugs|FX Logo" class="brand-logo">
+            <h1 class="brand-name">BankBugs<span>|FX</span></h1>
         </div>
+        
+        <!-- UPDATED ENTRANCE BUTTON ROW -->
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
+            <!-- Preview link forces a reset state back to your home view container -->
+            <a href="#" class="nav-link-btn" id="nav-preview-trigger" style="background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff; font-weight: 600; font-size: 12px; padding: 6px 12px; border-radius: 4px; text-decoration: none; display: inline-block; transition: border-color 0.2s ease;">Preview</a>
+            
+            <!-- Members login safely routes users out of the system back to lp.html -->
+            <a href="lp.html" class="logout-btn" style="margin-top: 0; padding: 7px 14px; font-size: 12px; font-weight: 700; background: var(--brand-gold); color: #000000; border-radius: 4px; text-decoration: none; display: inline-block;">Members Login</a>
+        </div>
+    </div>
+
 
 
         
